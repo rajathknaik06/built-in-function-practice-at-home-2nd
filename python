@@ -1,0 +1,38 @@
+""" Dhruv wants to write a program to slice a given string based on user-defined start and end positions. 
+
+
+
+The program should check whether the provided positions are valid and then return the sliced portion of the string if the positions are within the string's length.
+
+Input format :
+The first line consists of the input string as a string.
+
+The second line consists of the start position (0-based index) as an integer.
+
+The third line consists of the end position (0-based index) as an integer.
+
+Output format :
+The output displays the following format:
+
+
+
+If the start and end positions are valid, print the sliced string.
+
+If the start and end positions are invalid, print "Invalid start and end positions"."""
+
+input_string = input()
+start = int(input())
+end = int(input())
+
+result_string = ""
+
+input_length = 0
+for char in input_string:
+    input_length += 1
+
+if 0 <= start <= end < input_length:
+    for i in range(start, end + 1):
+        result_string += input_string[i]
+    print(result_string)
+else:
+    print("Invalid start and end positions")
